@@ -20,6 +20,18 @@ That gives us a clean seam: a network server can accept a message, validate it w
 6. How do we represent a new game, a player joining, a player leaving, and a finished game?
 7. What errors are safe to show to a user, and what errors are only useful for debugging?
 
+## Layering lens
+
+Use the same message to discuss three different responsibilities:
+
+| Layer | Class question | Example decision |
+| --- | --- | --- |
+| Application | What does a game action mean? | `draw_line` means a player requests one specific edge. |
+| Presentation | How are that meaning and its data represented? | JSON with a `type`, an orientation, a row, and a column. |
+| Session | How do two participants establish and maintain a game? | Join a game, assign a player, enforce turn order, and reconnect or leave cleanly. |
+
+Keeping these questions separate makes it easier to change an encoding without changing the rules, or to change the connection lifecycle without changing what a completed box means.
+
 ## Draft message table
 
 Replace these examples with the class decision. Do not treat them as a finished protocol.
