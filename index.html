@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dots & Boxes · Two players, one board</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <main>
+    <header><div><p class="eyebrow">TWO PLAYERS · ONE BOARD</p><h1>Dots <span>&</span> Boxes</h1></div><span class="local-badge">Local play</span></header>
+    <div class="layout">
+      <section class="play-area" aria-label="Game">
+        <div class="scores">
+          <article id="player1" class="player p1"><div><span class="player-label">PLAYER 1</span><h2>Coral <small id="turn1">Your turn</small></h2></div><strong id="score1">0</strong></article>
+          <article id="player2" class="player p2"><div><span class="player-label">PLAYER 2</span><h2>Teal <small id="turn2"></small></h2></div><strong id="score2">0</strong></article>
+        </div>
+        <div class="board-panel"><div class="board-heading"><span id="board-size">4 × 4 boxes</span><span id="remaining"></span></div><div id="board" aria-label="Dots and Boxes board"></div><p class="board-hint">Click a space between dots to draw a line.</p></div>
+        <p id="status" role="status" aria-live="polite" aria-atomic="true"></p>
+      </section>
+      <aside>
+        <section class="control-panel"><p class="eyebrow">MAKE YOUR MOVE</p><h2>Pick a line</h2><p class="muted">Choose its starting dot, then draw right or down.</p>
+          <form id="move-form">
+            <label>Direction<select id="direction"><option value="horizontal">Horizontal →</option><option value="vertical">Vertical ↓</option></select></label>
+            <div class="coordinates"><label>Row<select id="row"></select></label><label>Column<select id="column"></select></label></div>
+            <button id="draw" type="submit" class="primary">Draw line</button>
+          </form>
+        </section>
+        <section class="rules"><h2>A little strategy. A lot of boxes.</h2><ol><li>Take turns drawing one line.</li><li>Close a box to earn a point <strong>and another turn.</strong></li><li>Claim the most boxes to win.</li></ol></section>
+        <section class="new-game"><label>Board size<select id="size"><option value="2">2 × 2 · Quick round</option><option value="3">3 × 3 · Small board</option><option value="4" selected>4 × 4 · Classic</option><option value="5">5 × 5 · Longer game</option></select></label><button id="restart" type="button">New game</button><p class="muted">Starts a fresh board and resets both scores.</p></section>
+      </aside>
+    </div>
+    <footer>Connect the dots. Claim your corner.</footer>
+  </main>
+</body>
+</html>
