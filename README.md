@@ -1,8 +1,10 @@
 # Dots & Boxes: local JavaScript starter
 
-This is a small, dependency-free Dots & Boxes game for two people sharing one computer. It is a teaching starter for the networking unit: students can clone it, run it with Node, play a complete game, and then propose the messages and encoding they would need for a networked version.
+This is the student version: a small, dependency-free Dots & Boxes game for two people sharing one computer. Students can clone it, run it with Node, read the complete game, and then propose the messages and encoding they would need before adding a network version.
 
 The starter intentionally has no WebSocket, HTTP API, database, login, or multiplayer-server code. The only server is a tiny static file server so the browser can load the game locally.
+
+The future extension plan is recorded in [FUTURE_NETWORKING.md](FUTURE_NETWORKING.md). It describes the seams students will extend later without giving them the teacher network implementation.
 
 ## Requirements
 
@@ -52,6 +54,7 @@ code .
 | `server.js` | Local static file server only. | Add a route or inspect how a browser request is served. |
 | `test/game.test.js` | Executable examples of the rules. | Add a test before changing a rule. |
 | `PROTOCOL_DESIGN.md` | Class worksheet for the future network version. | Propose message names, fields, and encoding. |
+| `FUTURE_NETWORKING.md` | Extension map for the later network project. | Identify which layer a future change belongs to. |
 
 Keep the rules model independent from the browser. That separation is the useful starting point for a later network version: a server could own a `Game`, while clients send intentional actions and render state updates.
 
